@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Messing around with p5js</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-3">
+				<label for="populationrange">Population :<span id="populationval">200</span></label>
+				<input type="range" class="custom-range" min="10" max="500" onChange="start()" id="populationrange" value="200">
+			</div>
+			<div class="col-xs-3 ml-2">
+				<label for="poirange">Points of interest :<span id="poival">10</span></label>
+				<input type="range" class="custom-range" min="0" max="15" onChange="start()" id="poirange" value="10">
+			</div>
+			<div class="col-xs-3 ml-2">
+				<div class="custom-control custom-switch">
+					<input id="washhands" type="checkbox" class="custom-control-input" onClick="start()">
+					<label class="custom-control-label" for="washhands">People wash their hands</label>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<button type="button" class="btn btn-success" id="runsimulation" onclick="start()">Run</button>
+		</div>
+		<div class="row pt-1">
+			<div id="simulation" class="col-xs-12" style="width:100%;">
+				<script src="data/script/sketch.js"></script>
+			</div>
+		</div>
+		<div class="form-row pt-1">
+
+			<div class="row">
+				<div class="col">
+					<div class="input-group mb-2">
+						<div class="input-group-prepend">
+							<div class="input-group-text">Days</div>
+						</div>
+						<input id="daycount" type="text" class="form-control" readonly="readonly">
+					</div>
+				</div>
+				<div class="col">
+					<div class="input-group mb-2">
+						<div class="input-group-prepend">
+							<div class="input-group-text">Dead</div>
+						</div>
+						<input id="deadcount" type="text" class="form-control" readonly="readonly">
+					</div>
+				</div>
+				<div class="col">
+					<div class="input-group mb-2">
+						<div class="input-group-prepend">
+							<div class="input-group-text">Infected</div>
+						</div>
+						<input id="infectedcount" type="text" class="form-control" readonly="readonly">
+					</div>
+				</div>
+				<div class="col">
+					<div class="input-group mb-2">
+						<div class="input-group-prepend">
+							<div class="input-group-text">Recovered</div>
+						</div>
+						<input id="recoveredcount" type="text" class="form-control" readonly="readonly">
+					</div>
+				</div>
+			</div>
+
+			<canvas id="line-chart" width="800" height="450"></canvas>
+
+		</div>
+	</div>
+
+</body>
+
+</html>
