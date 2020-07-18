@@ -8,7 +8,7 @@
 
 /**
  * 
- * Airport record
+ * Covid19 record
  */
 Class Covid19Record {
 
